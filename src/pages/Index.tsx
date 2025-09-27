@@ -223,7 +223,7 @@ const Index = () => {
               >
                 <div className="relative overflow-hidden">
                   <img 
-                    src={product.image} 
+                    src="https://cdn.poehali.dev/files/825f660c-794e-4558-8e69-d7102eec7000.jpg" 
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
