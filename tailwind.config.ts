@@ -18,7 +18,15 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'heading': ['Montserrat', 'sans-serif'],
+				'body': ['Open Sans', 'sans-serif'],
+			},
 			colors: {
+				'eco-green': '#4ADF80',
+				'eco-dark-green': '#059669',
+				'eco-cream': '#FEF3C7',
+				'eco-brown': '#FEF3C7',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
