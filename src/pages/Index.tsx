@@ -132,25 +132,25 @@ const Index = () => {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="relative h-10 w-10">
-              <svg viewBox="0 0 40 40" className="h-10 w-10">
-                {/* Barn structure */}
-                <rect x="8" y="20" width="24" height="18" fill="#92400e"/>
-                <polygon points="8,20 20,8 32,20" fill="#991b1b"/>
-                <rect x="18" y="28" width="4" height="10" fill="#78350f"/>
-                <circle cx="16" cy="24" r="1" fill="#fef3c7"/>
+              <svg viewBox="0 0 160 40" className="h-10 w-auto">
+                {/* Leaf icon with path */}
+                <g>
+                  {/* Main leaf shape */}
+                  <path d="M8 20C8 12 14 6 22 6C26 6 29 8 31 11C33 8 36 6 40 6C48 6 54 12 54 20C54 28 48 34 40 34C36 34 33 32 31 29C29 32 26 34 22 34C14 34 8 28 8 20Z" fill="#22c55e" opacity="0.3"/>
+                  <path d="M12 20C12 14 17 10 22 10C25 10 27 12 28 14C29 12 31 10 34 10C39 10 44 14 44 20C44 26 39 30 34 30C31 30 29 28 28 26C27 28 25 30 22 30C17 30 12 26 12 20Z" fill="#16a34a"/>
+                  
+                  {/* Path/arrow through leaf */}
+                  <path d="M22 15L28 20L22 25" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="31" cy="20" r="1.5" fill="white"/>
+                  <circle cx="37" cy="20" r="1" fill="white" opacity="0.7"/>
+                </g>
                 
-                {/* Greenery around barn */}
-                <ellipse cx="5" cy="35" rx="6" ry="3" fill="#10b981"/>
-                <ellipse cx="35" cy="36" rx="4" ry="2" fill="#059669"/>
-                <circle cx="3" cy="30" r="2" fill="#34d399"/>
-                <circle cx="37" cy="32" r="1.5" fill="#10b981"/>
-                
-                {/* Trees/bushes */}
-                <circle cx="6" cy="28" r="3" fill="#059669"/>
-                <circle cx="34" cy="29" r="2.5" fill="#10b981"/>
+                {/* Text */}
+                <text x="60" y="17" fill="#1f2937" fontSize="12" fontFamily="Inter, sans-serif" fontWeight="700">Healthy</text>
+                <text x="60" y="31" fill="#16a34a" fontSize="12" fontFamily="Inter, sans-serif" fontWeight="700">Way</text>
               </svg>
             </div>
-            <h1 className="font-heading text-primary text-left font-light mx-3 px-[1px] my-0 py-0 text-2xl">HealthyWay</h1>
+
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
