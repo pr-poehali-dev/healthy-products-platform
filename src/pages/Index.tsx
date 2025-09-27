@@ -150,7 +150,7 @@ const Index = () => {
                 <circle cx="34" cy="29" r="2.5" fill="#10b981"/>
               </svg>
             </div>
-            <h1 className="text-2xl font-heading font-bold text-primary">EcoLife</h1>
+            <h1 className="font-heading text-primary text-left font-light text-xl mx-3 px-[1px] my-0 py-0">HealthyWay</h1>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
