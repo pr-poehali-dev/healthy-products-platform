@@ -132,37 +132,22 @@ const Index = () => {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="relative h-10 w-10">
-              <svg viewBox="0 0 180 40" className="h-10 w-auto">
-                {/* Background circle for person */}
-                <circle cx="25" cy="20" r="18" fill="#22c55e" opacity="0.2"/>
-                <circle cx="25" cy="20" r="15" fill="#16a34a" opacity="0.3"/>
-                
-                {/* Person figure doing yoga/stretching */}
-                <g transform="translate(25, 20)">
-                  {/* Head */}
-                  <circle cx="0" cy="-8" r="3" fill="#fbbf24"/>
+              <svg viewBox="0 0 160 40" className="h-10 w-auto">
+                {/* Leaf icon with path */}
+                <g>
+                  {/* Main leaf shape */}
+                  <path d="M8 20C8 12 14 6 22 6C26 6 29 8 31 11C33 8 36 6 40 6C48 6 54 12 54 20C54 28 48 34 40 34C36 34 33 32 31 29C29 32 26 34 22 34C14 34 8 28 8 20Z" fill="#22c55e" opacity="0.3"/>
+                  <path d="M12 20C12 14 17 10 22 10C25 10 27 12 28 14C29 12 31 10 34 10C39 10 44 14 44 20C44 26 39 30 34 30C31 30 29 28 28 26C27 28 25 30 22 30C17 30 12 26 12 20Z" fill="#16a34a"/>
                   
-                  {/* Body */}
-                  <ellipse cx="0" cy="-2" rx="2" ry="4" fill="#3b82f6"/>
-                  
-                  {/* Arms raised up (yoga pose) */}
-                  <path d="M-2 -4 L-6 -8 M2 -4 L6 -8" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round"/>
-                  
-                  {/* Legs in meditation pose */}
-                  <path d="M-1 2 L-4 6 M1 2 L4 6" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round"/>
-                  
-                  {/* Meditation/balance element */}
-                  <circle cx="0" cy="-12" r="1" fill="#fbbf24" opacity="0.6"/>
+                  {/* Path/arrow through leaf */}
+                  <path d="M22 15L28 20L22 25" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="31" cy="20" r="1.5" fill="white"/>
+                  <circle cx="37" cy="20" r="1" fill="white" opacity="0.7"/>
                 </g>
                 
-                {/* Leaf elements around person */}
-                <path d="M8 12 Q10 8 12 12 Q10 16 8 12" fill="#22c55e"/>
-                <path d="M38 28 Q40 24 42 28 Q40 32 38 28" fill="#16a34a"/>
-                <path d="M6 28 Q8 26 10 28 Q8 30 6 28" fill="#34d399"/>
-                
                 {/* Text */}
-                <text x="55" y="17" fill="#1f2937" fontSize="14" fontFamily="Inter, sans-serif" fontWeight="700">Healthy</text>
-                <text x="55" y="31" fill="#16a34a" fontSize="14" fontFamily="Inter, sans-serif" fontWeight="700">Way</text>
+                <text x="60" y="17" fill="#1f2937" fontSize="12" fontFamily="Inter, sans-serif" fontWeight="700">Healthy</text>
+                <text x="60" y="31" fill="#16a34a" fontSize="12" fontFamily="Inter, sans-serif" fontWeight="700">Way</text>
               </svg>
             </div>
 
