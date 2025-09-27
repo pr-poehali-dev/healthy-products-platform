@@ -228,6 +228,8 @@ const Index = () => {
                         ? "https://cdn.poehali.dev/files/825f660c-794e-4558-8e69-d7102eec7000.jpg"
                         : product.name === "Red Quinoa"
                         ? "https://cdn.poehali.dev/files/df6d21be-c0c6-4dfd-ab80-9df0e2f2f59f.jpg"
+                        : product.name === "Coconut Oil"
+                        ? "https://cdn.poehali.dev/files/55746c97-f202-4839-bf06-827f5cdf6b3a.jpg"
                         : product.image
                     }
                     alt={product.name}
