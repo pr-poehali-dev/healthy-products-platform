@@ -131,26 +131,17 @@ const Index = () => {
       <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="relative h-10 w-10">
-              <svg viewBox="0 0 40 40" className="h-10 w-10">
-                {/* Barn structure */}
-                <rect x="8" y="20" width="24" height="18" fill="#92400e"/>
-                <polygon points="8,20 20,8 32,20" fill="#991b1b"/>
-                <rect x="18" y="28" width="4" height="10" fill="#78350f"/>
-                <circle cx="16" cy="24" r="1" fill="#fef3c7"/>
-                
-                {/* Greenery around barn */}
-                <ellipse cx="5" cy="35" rx="6" ry="3" fill="#10b981"/>
-                <ellipse cx="35" cy="36" rx="4" ry="2" fill="#059669"/>
-                <circle cx="3" cy="30" r="2" fill="#34d399"/>
-                <circle cx="37" cy="32" r="1.5" fill="#10b981"/>
-                
-                {/* Trees/bushes */}
-                <circle cx="6" cy="28" r="3" fill="#059669"/>
-                <circle cx="34" cy="29" r="2.5" fill="#10b981"/>
-              </svg>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="https://cdn.poehali.dev/files/3980e36b-a71d-41ac-8ebe-c70e5bf95824.png" 
+                alt="Healthy Way Logo" 
+                className="h-10 w-10 object-contain"
+              />
+              <div className="flex flex-col">
+                <span className="font-heading text-xl font-bold text-gray-800 leading-none">Healthy</span>
+                <span className="font-heading text-xl font-bold text-primary leading-none">Way</span>
+              </div>
             </div>
-            <h1 className="font-heading text-primary text-left font-light mx-3 px-[1px] my-0 py-0 text-2xl">HealthyWay</h1>
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
