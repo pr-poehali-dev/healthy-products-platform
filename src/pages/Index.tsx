@@ -43,26 +43,26 @@ const Index = () => {
   const products = [
     {
       id: 1,
-      name: "Органический авокадо",
+      name: "Organic Avocado",
       price: 250,
       image: "/img/13e61165-ef82-4d39-b6c5-250c09d277e9.jpg",
-      category: "Фрукты",
+      category: "Fruits",
       organic: true
     },
     {
       id: 2,
-      name: "Киноа красная",
+      name: "Red Quinoa",
       price: 380,
       image: "/img/13e61165-ef82-4d39-b6c5-250c09d277e9.jpg",
-      category: "Крупы",
+      category: "Grains",
       organic: true
     },
     {
       id: 3,
-      name: "Кокосовое масло",
+      name: "Coconut Oil",
       price: 450,
       image: "/img/13e61165-ef82-4d39-b6c5-250c09d277e9.jpg",
-      category: "Масла",
+      category: "Oils",
       organic: true
     }
   ];
@@ -70,54 +70,54 @@ const Index = () => {
   const recipes = [
     {
       id: 1,
-      name: "Зеленый смузи-боул",
-      time: "10 мин",
+      name: "Green Smoothie Bowl",
+      time: "10 min",
       calories: 320,
       image: "/img/c5f02afe-bfcd-4eda-b6db-1b735de854ea.jpg",
-      tags: ["Вегетарианский", "Без глютена"]
+      tags: ["Vegetarian", "Gluten-Free"]
     },
     {
       id: 2,
-      name: "Салат с киноа и авокадо",
-      time: "15 мин",
+      name: "Quinoa Avocado Salad",
+      time: "15 min",
       calories: 280,
       image: "/img/c5f02afe-bfcd-4eda-b6db-1b735de854ea.jpg",
-      tags: ["Веганский", "Протеин"]
+      tags: ["Vegan", "High Protein"]
     },
     {
       id: 3,
-      name: "Запеченный лосось с овощами",
-      time: "25 мин",
+      name: "Baked Salmon with Vegetables",
+      time: "25 min",
       calories: 420,
       image: "/img/c5f02afe-bfcd-4eda-b6db-1b735de854ea.jpg",
-      tags: ["Омега-3", "Низкие углеводы"]
+      tags: ["Omega-3", "Low Carb"]
     }
   ];
 
   const workouts = [
     {
       id: 1,
-      name: "Утренняя йога",
-      duration: "20 мин",
-      level: "Начинающий",
+      name: "Morning Yoga",
+      duration: "20 min",
+      level: "Beginner",
       image: "/img/bfd971ec-ce08-46d4-9cfa-454b8f587fb8.jpg",
-      type: "Гибкость"
+      type: "Flexibility"
     },
     {
       id: 2,
-      name: "HIIT тренировка",
-      duration: "30 мин",
-      level: "Продвинутый",
+      name: "HIIT Workout",
+      duration: "30 min",
+      level: "Advanced",
       image: "/img/bfd971ec-ce08-46d4-9cfa-454b8f587fb8.jpg",
-      type: "Кардио"
+      type: "Cardio"
     },
     {
       id: 3,
-      name: "Силовая тренировка",
-      duration: "45 мин",
-      level: "Средний",
+      name: "Strength Training",
+      duration: "45 min",
+      level: "Intermediate",
       image: "/img/bfd971ec-ce08-46d4-9cfa-454b8f587fb8.jpg",
-      type: "Сила"
+      type: "Strength"
     }
   ];
 
@@ -154,10 +154,10 @@ const Index = () => {
           </div>
           
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#products" className="text-foreground hover:text-primary transition-colors">Продукты</a>
-            <a href="#recipes" className="text-foreground hover:text-primary transition-colors">Рецепты</a>
-            <a href="#workouts" className="text-foreground hover:text-primary transition-colors">Тренировки</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">О нас</a>
+            <a href="#products" className="text-foreground hover:text-primary transition-colors">Products</a>
+            <a href="#recipes" className="text-foreground hover:text-primary transition-colors">Recipes</a>
+            <a href="#workouts" className="text-foreground hover:text-primary transition-colors">Workouts</a>
+            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
           </nav>
 
           <div className="flex items-center space-x-4">
@@ -170,7 +170,7 @@ const Index = () => {
               )}
             </Button>
             <Button size="sm" className="bg-primary hover:bg-eco-dark-green">
-              Войти
+              Sign In
             </Button>
           </div>
         </div>
@@ -181,20 +181,20 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-eco-cream via-white to-eco-cream opacity-60"></div>
         <div className={`container mx-auto text-center relative z-10 transition-all duration-1000 ${visibleSections.includes('hero') ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
           <h2 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-6 leading-tight">
-            Здоровая жизнь
-            <span className="block text-primary">начинается сегодня</span>
+            Healthy Living
+            <span className="block text-primary">Starts Today</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Откройте для себя мир органических продуктов, полезных рецептов и эффективных тренировок для здорового образа жизни
+            Discover the world of organic products, healthy recipes, and effective workouts for a healthy lifestyle
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-primary hover:bg-eco-dark-green text-lg px-8 py-6 rounded-2xl">
               <Icon name="ShoppingBag" className="mr-2 h-5 w-5" />
-              Начать покупки
+              Start Shopping
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-2xl border-primary text-primary hover:bg-primary hover:text-white">
               <Icon name="Play" className="mr-2 h-5 w-5" />
-              Смотреть видео
+              Watch Video
             </Button>
           </div>
         </div>
@@ -212,10 +212,10 @@ const Index = () => {
         <div className="container mx-auto">
           <div className={`text-center mb-16 transition-all duration-800 ${visibleSections.includes('products') ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
             <h3 className="text-4xl font-heading font-bold text-foreground mb-4">
-              Органические продукты
+              Organic Products
             </h3>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Свежие и полезные продукты прямо с фермы к вашему столу
+              Fresh and healthy products straight from farm to your table
             </p>
           </div>
 
@@ -239,14 +239,14 @@ const Index = () => {
                   {product.organic && (
                     <Badge className="absolute top-4 left-4 bg-eco-green hover:bg-eco-green">
                       <Icon name="Leaf" className="mr-1 h-3 w-3" />
-                      Органический
+                      Organic
                     </Badge>
                   )}
                 </div>
                 <CardHeader className="pb-2">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-xl font-heading">{product.name}</CardTitle>
-                    <span className="text-2xl font-bold text-primary">{product.price}₽</span>
+                    <span className="text-2xl font-bold text-primary">${product.price/10}</span>
                   </div>
                   <Badge variant="secondary" className="w-fit">{product.category}</Badge>
                 </CardHeader>
@@ -256,7 +256,7 @@ const Index = () => {
                     className="w-full bg-primary hover:bg-eco-dark-green rounded-2xl"
                   >
                     <Icon name="Plus" className="mr-2 h-4 w-4" />
-                    В корзину
+                    Add to Cart
                   </Button>
                 </CardContent>
               </Card>
@@ -270,10 +270,10 @@ const Index = () => {
         <div className="container mx-auto">
           <div className={`text-center mb-16 transition-all duration-800 ${visibleSections.includes('recipes') ? 'animate-fade-in-left opacity-100' : 'opacity-0'}`}>
             <h3 className="text-4xl font-heading font-bold text-foreground mb-4">
-              Полезные рецепты
+              Healthy Recipes
             </h3>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Вкусные и питательные блюда для вашего здоровья
+              Delicious and nutritious meals for your health
             </p>
           </div>
 
@@ -295,7 +295,7 @@ const Index = () => {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 right-4 bg-white/90 rounded-full px-3 py-1 text-sm font-medium">
-                    {recipe.calories} ккал
+                    {recipe.calories} cal
                   </div>
                 </div>
                 <CardHeader className="pb-2">
@@ -315,7 +315,7 @@ const Index = () => {
                   </div>
                   <Button variant="outline" className="w-full rounded-2xl border-primary text-primary hover:bg-primary hover:text-white">
                     <Icon name="BookOpen" className="mr-2 h-4 w-4" />
-                    Смотреть рецепт
+                    View Recipe
                   </Button>
                 </CardContent>
               </Card>
@@ -329,10 +329,10 @@ const Index = () => {
         <div className="container mx-auto">
           <div className={`text-center mb-16 transition-all duration-800 ${visibleSections.includes('workouts') ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
             <h3 className="text-4xl font-heading font-bold text-foreground mb-4">
-              Тренировки для здоровья
+              Health Workouts
             </h3>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Эффективные программы для поддержания формы и энергии
+              Effective programs to maintain fitness and energy
             </p>
           </div>
 
@@ -364,7 +364,7 @@ const Index = () => {
                       <Icon name="Clock" className="mr-1 h-4 w-4" />
                       <span>{workout.duration}</span>
                     </div>
-                    <Badge variant={workout.level === 'Начинающий' ? 'secondary' : workout.level === 'Средний' ? 'default' : 'destructive'}>
+                    <Badge variant={workout.level === 'Beginner' ? 'secondary' : workout.level === 'Intermediate' ? 'default' : 'destructive'}>
                       {workout.level}
                     </Badge>
                   </div>
@@ -372,7 +372,7 @@ const Index = () => {
                 <CardContent className="pt-0">
                   <Button className="w-full bg-primary hover:bg-eco-dark-green rounded-2xl">
                     <Icon name="Play" className="mr-2 h-4 w-4" />
-                    Начать тренировку
+                    Start Workout
                   </Button>
                 </CardContent>
               </Card>
@@ -391,43 +391,43 @@ const Index = () => {
                 <h4 className="text-2xl font-heading font-bold">EcoLife</h4>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                Ваш путь к здоровой и счастливой жизни через правильное питание и активный образ жизни.
+                Your path to a healthy and happy life through proper nutrition and an active lifestyle.
               </p>
             </div>
             
             <div>
-              <h5 className="font-heading font-semibold text-lg mb-4">Продукты</h5>
+              <h5 className="font-heading font-semibold text-lg mb-4">Products</h5>
               <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-eco-green transition-colors">Органические овощи</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Суперфуды</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Натуральные масла</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Эко-снеки</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Organic Vegetables</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Superfoods</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Natural Oils</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Eco Snacks</a></li>
               </ul>
             </div>
             
             <div>
-              <h5 className="font-heading font-semibold text-lg mb-4">Рецепты</h5>
+              <h5 className="font-heading font-semibold text-lg mb-4">Recipes</h5>
               <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-eco-green transition-colors">Завтраки</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Обеды</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Ужины</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Десерты</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Breakfast</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Lunch</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Dinner</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Desserts</a></li>
               </ul>
             </div>
             
             <div>
-              <h5 className="font-heading font-semibold text-lg mb-4">Поддержка</h5>
+              <h5 className="font-heading font-semibold text-lg mb-4">Support</h5>
               <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-eco-green transition-colors">Часто задаваемые вопросы</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Доставка</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Возврат</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Контакты</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">FAQ</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Shipping</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Returns</a></li>
+                <li><a href="#" className="hover:text-eco-green transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300">© 2024 EcoLife. Все права защищены.</p>
+            <p className="text-gray-300">© 2024 EcoLife. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Icon name="Instagram" className="h-6 w-6 text-gray-300 hover:text-eco-green cursor-pointer transition-colors" />
               <Icon name="Facebook" className="h-6 w-6 text-gray-300 hover:text-eco-green cursor-pointer transition-colors" />
