@@ -387,7 +387,7 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Icon name="Leaf" className="h-8 w-8 text-eco-green" />
-                <h4 className="text-2xl font-heading font-bold">EcoLife</h4>
+                <h4 className="text-2xl font-heading font-semibold">Healthyway</h4>
               </div>
               <p className="text-gray-300 leading-relaxed">
                 Your path to a healthy and happy life through proper nutrition and an active lifestyle.
