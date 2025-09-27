@@ -223,7 +223,13 @@ const Index = () => {
               >
                 <div className="relative overflow-hidden">
                   <img 
-                    src="https://cdn.poehali.dev/files/825f660c-794e-4558-8e69-d7102eec7000.jpg" 
+                    src={
+                      product.name === "Organic Avocado" 
+                        ? "https://cdn.poehali.dev/files/825f660c-794e-4558-8e69-d7102eec7000.jpg"
+                        : product.name === "Red Quinoa"
+                        ? "https://cdn.poehali.dev/files/df6d21be-c0c6-4dfd-ab80-9df0e2f2f59f.jpg"
+                        : product.image
+                    }
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
