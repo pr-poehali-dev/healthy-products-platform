@@ -2,10 +2,43 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Index = () => {
   const [cartItems, setCartItems] = useState(0);
+  const [visibleSections, setVisibleSections] = useState<string[]>([]);
+  
+  const heroRef = useRef<HTMLElement>(null);
+  const productsRef = useRef<HTMLElement>(null);
+  const recipesRef = useRef<HTMLElement>(null);
+  const workoutsRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id || 'hero';
+            setVisibleSections(prev => 
+              prev.includes(sectionId) ? prev : [...prev, sectionId]
+            );
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    const sections = [heroRef.current, productsRef.current, recipesRef.current, workoutsRef.current];
+    sections.forEach(section => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach(section => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
 
   const products = [
     {
@@ -144,9 +177,9 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
+      <section ref={heroRef} id="hero" className="relative py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-eco-cream via-white to-eco-cream opacity-60"></div>
-        <div className="container mx-auto text-center relative z-10">
+        <div className={`container mx-auto text-center relative z-10 transition-all duration-1000 ${visibleSections.includes('hero') ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
           <h2 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-6 leading-tight">
             Здоровая жизнь
             <span className="block text-primary">начинается сегодня</span>
@@ -175,9 +208,9 @@ const Index = () => {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-20 px-4">
+      <section ref={productsRef} id="products" className="py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-800 ${visibleSections.includes('products') ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
             <h3 className="text-4xl font-heading font-bold text-foreground mb-4">
               Органические продукты
             </h3>
@@ -187,8 +220,16 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product) => (
-              <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden">
+            {products.map((product, index) => (
+              <Card 
+                key={product.id} 
+                className={`group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden ${
+                  visibleSections.includes('products') 
+                    ? 'animate-scale-in opacity-100' 
+                    : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={product.image} 
@@ -225,9 +266,9 @@ const Index = () => {
       </section>
 
       {/* Recipes Section */}
-      <section id="recipes" className="py-20 px-4 bg-eco-cream/30">
+      <section ref={recipesRef} id="recipes" className="py-20 px-4 bg-eco-cream/30">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-800 ${visibleSections.includes('recipes') ? 'animate-fade-in-left opacity-100' : 'opacity-0'}`}>
             <h3 className="text-4xl font-heading font-bold text-foreground mb-4">
               Полезные рецепты
             </h3>
@@ -237,8 +278,16 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {recipes.map((recipe) => (
-              <Card key={recipe.id} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden">
+            {recipes.map((recipe, index) => (
+              <Card 
+                key={recipe.id} 
+                className={`group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden ${
+                  visibleSections.includes('recipes') 
+                    ? 'animate-fade-in-right opacity-100' 
+                    : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={recipe.image} 
@@ -276,9 +325,9 @@ const Index = () => {
       </section>
 
       {/* Workouts Section */}
-      <section id="workouts" className="py-20 px-4">
+      <section ref={workoutsRef} id="workouts" className="py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 transition-all duration-800 ${visibleSections.includes('workouts') ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
             <h3 className="text-4xl font-heading font-bold text-foreground mb-4">
               Тренировки для здоровья
             </h3>
@@ -288,8 +337,16 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {workouts.map((workout) => (
-              <Card key={workout.id} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden">
+            {workouts.map((workout, index) => (
+              <Card 
+                key={workout.id} 
+                className={`group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden ${
+                  visibleSections.includes('workouts') 
+                    ? 'animate-scale-in opacity-100' 
+                    : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={workout.image} 
