@@ -245,7 +245,7 @@ const Index = () => {
                 <CardHeader className="pb-2">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-xl font-heading">{product.name}</CardTitle>
-                    <span className="text-2xl font-bold text-primary">${product.price/10}</span>
+                    <span className="text-2xl font-bold text-primary">$6</span>
                   </div>
                   <Badge variant="secondary" className="w-fit">{product.category}</Badge>
                 </CardHeader>
