@@ -73,7 +73,7 @@ const Index = () => {
       name: "Green Smoothie Bowl",
       time: "10 min",
       calories: 320,
-      image: "/img/c5f02afe-bfcd-4eda-b6db-1b735de854ea.jpg",
+      image: "https://cdn.poehali.dev/files/0d30898a-be19-443d-9f57-fc46eba47fae.jpg",
       tags: ["Vegetarian", "Gluten-Free"]
     },
     {
