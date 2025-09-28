@@ -116,7 +116,7 @@ const Index = () => {
       name: "Strength Training",
       duration: "45 min",
       level: "Intermediate",
-      image: "/img/bfd971ec-ce08-46d4-9cfa-454b8f587fb8.jpg",
+      image: "https://cdn.poehali.dev/files/1dd297a9-b748-4059-a55d-781887dde269.jpg",
       type: "Strength"
     }
   ];
