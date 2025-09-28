@@ -386,8 +386,15 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Icon name="Leaf" className="h-8 w-8 text-eco-green" />
-                <h4 className="text-2xl font-heading font-semibold">Healthyway</h4>
+                <img 
+                  src="https://cdn.poehali.dev/files/3980e36b-a71d-41ac-8ebe-c70e5bf95824.png" 
+                  alt="Healthy Way Logo" 
+                  className="h-10 w-10 object-contain"
+                />
+                <div className="flex flex-col">
+                  <span className="font-heading text-xl font-bold text-white leading-none">Healthy</span>
+                  <span className="font-heading text-xl font-bold text-eco-green leading-none">Way</span>
+                </div>
               </div>
               <p className="text-gray-300 leading-relaxed">
                 Your path to a healthy and happy life through proper nutrition and an active lifestyle.
