@@ -108,7 +108,7 @@ const Index = () => {
       name: "HIIT Workout",
       duration: "30 min",
       level: "Advanced",
-      image: "/img/bfd971ec-ce08-46d4-9cfa-454b8f587fb8.jpg",
+      image: "https://cdn.poehali.dev/files/b907d2d7-37dc-45d4-8e89-bf15bc63b046.jpg",
       type: "Cardio"
     },
     {
