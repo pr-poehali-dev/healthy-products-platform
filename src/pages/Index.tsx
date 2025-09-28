@@ -89,7 +89,7 @@ const Index = () => {
       name: "Baked Salmon with Vegetables",
       time: "25 min",
       calories: 420,
-      image: "/img/c5f02afe-bfcd-4eda-b6db-1b735de854ea.jpg",
+      image: "https://cdn.poehali.dev/files/3a4fa02f-9ce1-44f0-92ed-51da9322bc77.jpg",
       tags: ["Omega-3", "Low Carb"]
     }
   ];
