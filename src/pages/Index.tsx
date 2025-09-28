@@ -81,7 +81,7 @@ const Index = () => {
       name: "Quinoa Avocado Salad",
       time: "15 min",
       calories: 280,
-      image: "/img/c5f02afe-bfcd-4eda-b6db-1b735de854ea.jpg",
+      image: "https://cdn.poehali.dev/files/70cd026f-ddb0-4fd9-a180-6cbd56683536.jpg",
       tags: ["Vegan", "High Protein"]
     },
     {
