@@ -240,7 +240,32 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="relative">
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
+              onClick={() => {
+                const container = document.getElementById('products-scroll');
+                if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
+              }}
+            >
+              <Icon name="ChevronLeft" className="h-6 w-6 text-primary" />
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
+              onClick={() => {
+                const container = document.getElementById('products-scroll');
+                if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
+              }}
+            >
+              <Icon name="ChevronRight" className="h-6 w-6 text-primary" />
+            </Button>
+
+            <div id="products-scroll" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto scrollbar-hide scroll-smooth">
             {products.map((product, index) => (
               <Card 
                 key={product.id} 
@@ -290,6 +315,7 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+            </div>
           </div>
         </div>
       </section>
@@ -306,7 +332,32 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="relative">
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
+              onClick={() => {
+                const container = document.getElementById('recipes-scroll');
+                if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
+              }}
+            >
+              <Icon name="ChevronLeft" className="h-6 w-6 text-primary" />
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
+              onClick={() => {
+                const container = document.getElementById('recipes-scroll');
+                if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
+              }}
+            >
+              <Icon name="ChevronRight" className="h-6 w-6 text-primary" />
+            </Button>
+
+            <div id="recipes-scroll" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto scrollbar-hide scroll-smooth">
             {recipes.map((recipe, index) => (
               <Card 
                 key={recipe.id} 
@@ -349,6 +400,7 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+            </div>
           </div>
         </div>
       </section>
@@ -365,7 +417,32 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="relative">
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
+              onClick={() => {
+                const container = document.getElementById('workouts-scroll');
+                if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
+              }}
+            >
+              <Icon name="ChevronLeft" className="h-6 w-6 text-primary" />
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
+              onClick={() => {
+                const container = document.getElementById('workouts-scroll');
+                if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
+              }}
+            >
+              <Icon name="ChevronRight" className="h-6 w-6 text-primary" />
+            </Button>
+
+            <div id="workouts-scroll" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto scrollbar-hide scroll-smooth">
             {workouts.map((workout, index) => (
               <Card 
                 key={workout.id} 
@@ -406,6 +483,7 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+            </div>
           </div>
         </div>
       </section>
