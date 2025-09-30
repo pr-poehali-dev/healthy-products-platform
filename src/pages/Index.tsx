@@ -4,7 +4,6 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ProductsSection } from "@/components/sections/ProductsSection";
 import { RecipesSection } from "@/components/sections/RecipesSection";
 import { WorkoutsSection } from "@/components/sections/WorkoutsSection";
-import { DeliverySection } from "@/components/sections/DeliverySection";
 import { Footer } from "@/components/sections/Footer";
 
 const Index = () => {
@@ -15,7 +14,6 @@ const Index = () => {
   const productsRef = useRef<HTMLElement>(null);
   const recipesRef = useRef<HTMLElement>(null);
   const workoutsRef = useRef<HTMLElement>(null);
-  const deliveryRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,7 +30,7 @@ const Index = () => {
       { threshold: 0.1, rootMargin: '50px' }
     );
 
-    const sections = [heroRef.current, productsRef.current, recipesRef.current, workoutsRef.current, deliveryRef.current];
+    const sections = [heroRef.current, productsRef.current, recipesRef.current, workoutsRef.current];
     sections.forEach(section => {
       if (section) observer.observe(section);
     });
@@ -155,11 +153,6 @@ const Index = () => {
         workoutsRef={workoutsRef}
         isVisible={visibleSections.includes('workouts')}
         workouts={workouts}
-      />
-      
-      <DeliverySection 
-        deliveryRef={deliveryRef}
-        isVisible={visibleSections.includes('delivery')}
       />
       
       <Footer />

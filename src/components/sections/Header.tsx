@@ -28,7 +28,6 @@ export const Header = ({ cartItems }: HeaderProps) => {
           <a href="#products" className="text-foreground hover:text-primary transition-colors">Products</a>
           <a href="#recipes" className="text-foreground hover:text-primary transition-colors">Recipes</a>
           <a href="#workouts" className="text-foreground hover:text-primary transition-colors">Workouts</a>
-          <a href="#delivery" className="text-foreground hover:text-primary transition-colors">Delivery</a>
         </nav>
         
         <div className="flex items-center space-x-4">
