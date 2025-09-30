@@ -463,7 +463,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300">© 2024 EcoLife. All rights reserved.</p>
+            <p className="text-gray-300">© 2024 Healthy way. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Icon name="Instagram" className="h-6 w-6 text-gray-300 hover:text-eco-green cursor-pointer transition-colors" />
               <Icon name="Facebook" className="h-6 w-6 text-gray-300 hover:text-eco-green cursor-pointer transition-colors" />
