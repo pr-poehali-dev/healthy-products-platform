@@ -68,7 +68,7 @@ const Index = () => {
       id: 1,
       name: "Organic Avocado",
       price: 250,
-      image: "/img/13e61165-ef82-4d39-b6c5-250c09d277e9.jpg",
+      image: "/img/8b084198-ce3b-42bd-9347-b2e74ac8f165.jpg",
       category: "Fruits",
       organic: true
     },
@@ -76,7 +76,7 @@ const Index = () => {
       id: 2,
       name: "Red Quinoa",
       price: 380,
-      image: "/img/13e61165-ef82-4d39-b6c5-250c09d277e9.jpg",
+      image: "/img/82a2c06b-d11e-470c-8ac0-335e6e324bce.jpg",
       category: "Grains",
       organic: true
     },
@@ -84,7 +84,7 @@ const Index = () => {
       id: 3,
       name: "Coconut Oil",
       price: 450,
-      image: "/img/13e61165-ef82-4d39-b6c5-250c09d277e9.jpg",
+      image: "/img/8a5fcbfc-5b31-482f-bc4f-5f09bf873f80.jpg",
       category: "Oils",
       organic: true
     }
