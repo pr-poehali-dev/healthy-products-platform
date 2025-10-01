@@ -24,10 +24,14 @@ export const Header = ({ cartItems }: HeaderProps) => {
           </div>
         </div>
         
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#products" className="text-foreground hover:text-primary transition-colors">Products</a>
-          <a href="#recipes" className="text-foreground hover:text-primary transition-colors">Recipes</a>
-          <a href="#workouts" className="text-foreground hover:text-primary transition-colors">Workouts</a>
+        <nav className="hidden lg:flex items-center space-x-6">
+          <a href="#products" className="text-foreground hover:text-primary transition-colors text-sm font-medium">Products</a>
+          <a href="#recipes" className="text-foreground hover:text-primary transition-colors text-sm font-medium">Recipes</a>
+          <a href="#workouts" className="text-foreground hover:text-primary transition-colors text-sm font-medium">Workouts</a>
+          <a href="#delivery" className="text-foreground hover:text-primary transition-colors text-sm font-medium">Delivery</a>
+          <a href="#about" className="text-foreground hover:text-primary transition-colors text-sm font-medium">About</a>
+          <a href="#blog" className="text-foreground hover:text-primary transition-colors text-sm font-medium">Blog</a>
+          <a href="#contact" className="text-foreground hover:text-primary transition-colors text-sm font-medium">Contact</a>
         </nav>
         
         <div className="flex items-center space-x-4">

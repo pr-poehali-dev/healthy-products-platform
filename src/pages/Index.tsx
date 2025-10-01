@@ -1,8 +1,15 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import Icon from "@/components/ui/icon";
 import { useState, useEffect, useRef } from "react";
+import { Header } from "@/components/sections/Header";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { ProductsSection } from "@/components/sections/ProductsSection";
+import { RecipesSection } from "@/components/sections/RecipesSection";
+import { WorkoutsSection } from "@/components/sections/WorkoutsSection";
+import { DeliverySection } from "@/components/sections/DeliverySection";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { BlogSection } from "@/components/sections/BlogSection";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { Footer } from "@/components/sections/Footer";
 
 const Index = () => {
   const [cartItems, setCartItems] = useState(0);
@@ -12,6 +19,11 @@ const Index = () => {
   const productsRef = useRef<HTMLElement>(null);
   const recipesRef = useRef<HTMLElement>(null);
   const workoutsRef = useRef<HTMLElement>(null);
+  const deliveryRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
+  const blogRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
+  const faqRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,7 +40,18 @@ const Index = () => {
       { threshold: 0.1, rootMargin: '50px' }
     );
 
-    const sections = [heroRef.current, productsRef.current, recipesRef.current, workoutsRef.current];
+    const sections = [
+      heroRef.current, 
+      productsRef.current, 
+      recipesRef.current, 
+      workoutsRef.current, 
+      deliveryRef.current,
+      aboutRef.current,
+      blogRef.current,
+      contactRef.current,
+      faqRef.current
+    ];
+    
     sections.forEach(section => {
       if (section) observer.observe(section);
     });
@@ -127,429 +150,58 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="flex items-center space-x-3">
-              <img 
-                src="https://cdn.poehali.dev/files/3980e36b-a71d-41ac-8ebe-c70e5bf95824.png" 
-                alt="Healthy Way Logo" 
-                className="h-10 w-10 object-contain"
-              />
-              <div className="flex flex-col">
-                <span className="font-heading text-xl font-bold text-gray-800 leading-none">Healthy</span>
-                <span className="font-heading text-xl font-bold text-primary leading-none">Way</span>
-              </div>
-            </div>
-          </div>
-          
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#products" className="text-foreground hover:text-primary transition-colors">Products</a>
-            <a href="#recipes" className="text-foreground hover:text-primary transition-colors">Recipes</a>
-            <a href="#workouts" className="text-foreground hover:text-primary transition-colors">Workouts</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-          </nav>
-
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="relative">
-              <Icon name="ShoppingCart" className="h-5 w-5" />
-              {cartItems > 0 && (
-                <Badge className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-eco-green">
-                  {cartItems}
-                </Badge>
-              )}
-            </Button>
-            <Button size="sm" className="bg-primary hover:bg-eco-dark-green">
-              Sign In
-            </Button>
-          </div>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section ref={heroRef} id="hero" className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-eco-cream via-white to-eco-cream opacity-60"></div>
-        
-        {/* Decorative botanical background */}
-        <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <pattern id="botanical-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-              {/* Vine curves */}
-              <path d="M0,100 Q50,80 100,100 T200,100" stroke="#4ade80" strokeWidth="2" fill="none" opacity="0.4"/>
-              <path d="M0,150 Q50,130 100,150 T200,150" stroke="#4ade80" strokeWidth="1.5" fill="none" opacity="0.3"/>
-              
-              {/* Leaves */}
-              <path d="M40,90 Q45,85 50,90 Q45,95 40,90" stroke="#22c55e" strokeWidth="1.5" fill="none" opacity="0.5"/>
-              <path d="M90,110 Q95,105 100,110 Q95,115 90,110" stroke="#22c55e" strokeWidth="1.5" fill="none" opacity="0.5"/>
-              <path d="M140,90 Q145,85 150,90 Q145,95 140,90" stroke="#22c55e" strokeWidth="1.5" fill="none" opacity="0.5"/>
-              
-              {/* Small flowers */}
-              <circle cx="30" cy="100" r="3" stroke="#4ade80" strokeWidth="1.5" fill="none" opacity="0.6"/>
-              <circle cx="30" cy="100" r="1.5" fill="#22c55e" opacity="0.4"/>
-              
-              <circle cx="120" cy="100" r="3" stroke="#4ade80" strokeWidth="1.5" fill="none" opacity="0.6"/>
-              <circle cx="120" cy="100" r="1.5" fill="#22c55e" opacity="0.4"/>
-              
-              {/* Small leaf details */}
-              <ellipse cx="70" cy="95" rx="4" ry="8" stroke="#22c55e" strokeWidth="1" fill="none" opacity="0.4"/>
-              <ellipse cx="160" cy="105" rx="4" ry="8" stroke="#22c55e" strokeWidth="1" fill="none" opacity="0.4"/>
-            </pattern>
-          </defs>
-          
-          <rect width="100%" height="100%" fill="url(#botanical-pattern)"/>
-        </svg>
-        
-        <div className={`container mx-auto text-center relative z-10 transition-all duration-1000 ${visibleSections.includes('hero') ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
-          <h2 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-6 leading-tight">
-            Healthy Living
-            <span className="block text-primary">Starts Today</span>
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Discover the world of organic products, healthy recipes, and effective workouts for a healthy lifestyle
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-eco-dark-green text-lg px-8 py-6 rounded-2xl">
-              <Icon name="ShoppingBag" className="mr-2 h-5 w-5" />
-              Start Shopping
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-2xl border-primary text-primary hover:bg-primary hover:text-white">
-              <Icon name="Play" className="mr-2 h-5 w-5" />
-              Watch Video
-            </Button>
-          </div>
-        </div>
-        
-        <div className="absolute top-10 right-10 opacity-20">
-          <Icon name="Leaf" className="h-32 w-32 text-primary" />
-        </div>
-        <div className="absolute bottom-10 left-10 opacity-20">
-          <Icon name="Heart" className="h-24 w-24 text-eco-green" />
-        </div>
-      </section>
-
-      {/* Products Section */}
-      <section ref={productsRef} id="products" className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className={`text-center mb-16 transition-all duration-800 ${visibleSections.includes('products') ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
-            <h3 className="text-4xl font-heading font-bold text-foreground mb-4">
-              Organic Products
-            </h3>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Fresh and healthy products straight from farm to your table
-            </p>
-          </div>
-
-          <div className="relative">
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
-              onClick={() => {
-                const container = document.getElementById('products-scroll');
-                if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
-              }}
-            >
-              <Icon name="ChevronLeft" className="h-6 w-6 text-primary" />
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
-              onClick={() => {
-                const container = document.getElementById('products-scroll');
-                if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
-              }}
-            >
-              <Icon name="ChevronRight" className="h-6 w-6 text-primary" />
-            </Button>
-
-            <div id="products-scroll" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto scrollbar-hide scroll-smooth">
-            {products.map((product, index) => (
-              <Card 
-                key={product.id} 
-                className={`group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden ${
-                  visibleSections.includes('products') 
-                    ? 'animate-scale-in opacity-100' 
-                    : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={
-                      product.name === "Organic Avocado" 
-                        ? "https://cdn.poehali.dev/files/825f660c-794e-4558-8e69-d7102eec7000.jpg"
-                        : product.name === "Red Quinoa"
-                        ? "https://cdn.poehali.dev/files/df6d21be-c0c6-4dfd-ab80-9df0e2f2f59f.jpg"
-                        : product.name === "Coconut Oil"
-                        ? "https://cdn.poehali.dev/files/55746c97-f202-4839-bf06-827f5cdf6b3a.jpg"
-                        : product.image
-                    }
-                    alt={product.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {product.organic && (
-                    <Badge className="absolute top-4 left-4 bg-eco-green hover:bg-eco-green">
-                      <Icon name="Leaf" className="mr-1 h-3 w-3" />
-                      Organic
-                    </Badge>
-                  )}
-                </div>
-                <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="text-xl font-heading">{product.name}</CardTitle>
-                    <span className="text-2xl font-bold text-primary">${product.price/10}</span>
-                  </div>
-                  <Badge variant="secondary" className="w-fit">{product.category}</Badge>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <Button 
-                    onClick={addToCart}
-                    className="w-full bg-primary hover:bg-eco-dark-green rounded-2xl"
-                  >
-                    <Icon name="Plus" className="mr-2 h-4 w-4" />
-                    Add to Cart
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Recipes Section */}
-      <section ref={recipesRef} id="recipes" className="py-20 px-4 bg-eco-cream/30">
-        <div className="container mx-auto">
-          <div className={`text-center mb-16 transition-all duration-800 ${visibleSections.includes('recipes') ? 'animate-fade-in-left opacity-100' : 'opacity-0'}`}>
-            <h3 className="text-4xl font-heading font-bold text-foreground mb-4">
-              Healthy Recipes
-            </h3>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Delicious and nutritious meals for your health
-            </p>
-          </div>
-
-          <div className="relative">
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
-              onClick={() => {
-                const container = document.getElementById('recipes-scroll');
-                if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
-              }}
-            >
-              <Icon name="ChevronLeft" className="h-6 w-6 text-primary" />
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
-              onClick={() => {
-                const container = document.getElementById('recipes-scroll');
-                if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
-              }}
-            >
-              <Icon name="ChevronRight" className="h-6 w-6 text-primary" />
-            </Button>
-
-            <div id="recipes-scroll" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto scrollbar-hide scroll-smooth">
-            {recipes.map((recipe, index) => (
-              <Card 
-                key={recipe.id} 
-                className={`group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden ${
-                  visibleSections.includes('recipes') 
-                    ? 'animate-fade-in-right opacity-100' 
-                    : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={recipe.image} 
-                    alt={recipe.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 right-4 bg-white/90 rounded-full px-3 py-1 text-sm font-medium">
-                    {recipe.calories} cal
-                  </div>
-                </div>
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-xl font-heading">{recipe.name}</CardTitle>
-                  <div className="flex items-center text-muted-foreground">
-                    <Icon name="Clock" className="mr-1 h-4 w-4" />
-                    <span>{recipe.time}</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {recipe.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button variant="outline" className="w-full rounded-2xl border-primary text-primary hover:bg-primary hover:text-white">
-                    <Icon name="BookOpen" className="mr-2 h-4 w-4" />
-                    View Recipe
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Workouts Section */}
-      <section ref={workoutsRef} id="workouts" className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className={`text-center mb-16 transition-all duration-800 ${visibleSections.includes('workouts') ? 'animate-fade-in-up opacity-100' : 'opacity-0'}`}>
-            <h3 className="text-4xl font-heading font-bold text-foreground mb-4">
-              Health Workouts
-            </h3>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Effective programs to maintain fitness and energy
-            </p>
-          </div>
-
-          <div className="relative">
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
-              onClick={() => {
-                const container = document.getElementById('workouts-scroll');
-                if (container) container.scrollBy({ left: -400, behavior: 'smooth' });
-              }}
-            >
-              <Icon name="ChevronLeft" className="h-6 w-6 text-primary" />
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-12 w-12 rounded-full bg-white shadow-lg hover:bg-eco-cream border-2 border-primary"
-              onClick={() => {
-                const container = document.getElementById('workouts-scroll');
-                if (container) container.scrollBy({ left: 400, behavior: 'smooth' });
-              }}
-            >
-              <Icon name="ChevronRight" className="h-6 w-6 text-primary" />
-            </Button>
-
-            <div id="workouts-scroll" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto scrollbar-hide scroll-smooth">
-            {workouts.map((workout, index) => (
-              <Card 
-                key={workout.id} 
-                className={`group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-3xl overflow-hidden ${
-                  visibleSections.includes('workouts') 
-                    ? 'animate-scale-in opacity-100' 
-                    : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={workout.image} 
-                    alt={workout.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/90 rounded-full px-3 py-1 text-sm font-medium">
-                    {workout.type}
-                  </div>
-                </div>
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-xl font-heading">{workout.name}</CardTitle>
-                  <div className="flex items-center justify-between text-muted-foreground">
-                    <div className="flex items-center">
-                      <Icon name="Clock" className="mr-1 h-4 w-4" />
-                      <span>{workout.duration}</span>
-                    </div>
-                    <Badge variant={workout.level === 'Beginner' ? 'secondary' : workout.level === 'Intermediate' ? 'default' : 'destructive'}>
-                      {workout.level}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <Button className="w-full bg-primary hover:bg-eco-dark-green rounded-2xl">
-                    <Icon name="Play" className="mr-2 h-4 w-4" />
-                    Start Workout
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-foreground text-white py-16 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <img 
-                  src="https://cdn.poehali.dev/files/3980e36b-a71d-41ac-8ebe-c70e5bf95824.png" 
-                  alt="Healthy Way Logo" 
-                  className="h-10 w-10 object-contain"
-                />
-                <div className="flex flex-col">
-                  <span className="font-heading text-xl font-bold text-white leading-none">Healthy</span>
-                  <span className="font-heading text-xl font-bold text-eco-green leading-none">Way</span>
-                </div>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                Your path to a healthy and happy life through proper nutrition and an active lifestyle.
-              </p>
-            </div>
-            
-            <div>
-              <h5 className="font-heading font-semibold text-lg mb-4">Products</h5>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-eco-green transition-colors">Organic Vegetables</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Superfoods</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Natural Oils</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Eco Snacks</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h5 className="font-heading font-semibold text-lg mb-4">Recipes</h5>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-eco-green transition-colors">Breakfast</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Lunch</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Dinner</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Desserts</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h5 className="font-heading font-semibold text-lg mb-4">Support</h5>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-eco-green transition-colors">FAQ</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Shipping</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Returns</a></li>
-                <li><a href="#" className="hover:text-eco-green transition-colors">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300">© 2024 Healthy way. All rights reserved.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Icon name="Instagram" className="h-6 w-6 text-gray-300 hover:text-eco-green cursor-pointer transition-colors" />
-              <Icon name="Facebook" className="h-6 w-6 text-gray-300 hover:text-eco-green cursor-pointer transition-colors" />
-              <Icon name="Twitter" className="h-6 w-6 text-gray-300 hover:text-eco-green cursor-pointer transition-colors" />
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Header cartItems={cartItems} />
+      
+      <HeroSection 
+        heroRef={heroRef} 
+        isVisible={visibleSections.includes('hero')} 
+      />
+      
+      <ProductsSection 
+        productsRef={productsRef}
+        isVisible={visibleSections.includes('products')}
+        products={products}
+        onAddToCart={addToCart}
+      />
+      
+      <RecipesSection 
+        recipesRef={recipesRef}
+        isVisible={visibleSections.includes('recipes')}
+        recipes={recipes}
+      />
+      
+      <WorkoutsSection 
+        workoutsRef={workoutsRef}
+        isVisible={visibleSections.includes('workouts')}
+        workouts={workouts}
+      />
+      
+      <DeliverySection 
+        deliveryRef={deliveryRef}
+        isVisible={visibleSections.includes('delivery')}
+      />
+      
+      <AboutSection 
+        aboutRef={aboutRef}
+        isVisible={visibleSections.includes('about')}
+      />
+      
+      <BlogSection 
+        blogRef={blogRef}
+        isVisible={visibleSections.includes('blog')}
+      />
+      
+      <FAQSection 
+        faqRef={faqRef}
+        isVisible={visibleSections.includes('faq')}
+      />
+      
+      <ContactSection 
+        contactRef={contactRef}
+        isVisible={visibleSections.includes('contact')}
+      />
+      
+      <Footer />
     </div>
   );
 };
