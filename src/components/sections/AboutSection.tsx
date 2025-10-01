@@ -54,7 +54,7 @@ export const AboutSection = ({ aboutRef, isVisible }: AboutSectionProps) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className={`transition-all duration-800 ${isVisible ? 'animate-fade-in-left opacity-100' : 'opacity-0'}`}>
             <img 
-              src="https://cdn.poehali.dev/files/0d30898a-be19-443d-9f57-fc46eba47fae.jpg"
+              src="/img/f7fbf068-5ef0-486a-9d9c-99eaef6d5a44.jpg"
               alt="Organic Farm"
               className="rounded-3xl shadow-2xl w-full h-[400px] object-cover"
             />
