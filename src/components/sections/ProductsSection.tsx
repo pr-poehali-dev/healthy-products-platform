@@ -85,7 +85,7 @@ export const ProductsSection = ({ productsRef, isVisible, products, onAddToCart 
                 <CardHeader className="pb-2">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-xl font-heading">{product.name}</CardTitle>
-                    <span className="text-2xl font-bold text-primary">$38</span>
+                    <span className="text-2xl font-bold text-primary">$26</span>
                   </div>
                   <p className="text-sm text-muted-foreground">{product.category}</p>
                 </CardHeader>
